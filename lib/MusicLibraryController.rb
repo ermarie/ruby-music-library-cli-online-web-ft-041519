@@ -70,7 +70,7 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    user_input = gets
+    user_input = gets.strip
     artist = Artist.all.detect { |artist| artist.name == user_input }
     if artist != nil
       song_arr = []
@@ -88,6 +88,7 @@ class MusicLibraryController
   def list_songs_by_genre
     puts "Please enter the name of a genre:"
     user_input = gets
+    user_input = gets.strip
     genre = Genre.all.detect { |genre| genre.name == user_input }
     if genre != nil
       song_arr = []
@@ -114,6 +115,10 @@ class MusicLibraryController
         end
       end
     end
+  end
+
+  def play_song
+
   end
 
 end
